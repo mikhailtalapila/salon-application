@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'salon-application';
+  buttonClicked(): void {
+    alert('You have clicked the button');
+  }
 }
