@@ -1,0 +1,13 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="lookUpClient()">
+    <mat-icon>search</mat-icon>
+    <span>Look up client</span>
+  </button>
+  <button mat-menu-item (click)="makeAppointment()">
+    <mat-icon>calendar_today</mat-icon>
+    <span>Create an appointment</span>
+  </button>
+</mat-menu>
