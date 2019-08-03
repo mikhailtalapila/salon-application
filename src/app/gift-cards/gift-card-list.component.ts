@@ -23,7 +23,7 @@ export class GiftCardListComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
   viewDetails(giftCard: IGiftCard) {
-    this._router.navigate(['gift-card-details', giftCard.id]);
+    this._router.navigate(['gift-cards', 'gift-card-details', giftCard.id]);
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

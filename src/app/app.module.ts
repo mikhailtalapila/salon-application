@@ -12,13 +12,19 @@ import { SchedulerModule } from './scheduler/scheduler.module';
 import { GiftCardListComponent } from './gift-cards/gift-card-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GiftCardDetailsComponent } from './gift-cards/gift-card-details.component';
+import { GiftCardNewComponent } from './gift-cards/gift-card-new.component';
+import { GiftCardGeneratedIdDialogComponent } from './gift-cards/dialogs/gift-card-generated-id-dialog.component';
 
 @NgModule({
   declarations: [
     SalonAppComponent,
     NavBarComponent,
     NavBarMenuComponent,
-    GiftCardListComponent
+    GiftCardListComponent,
+    GiftCardDetailsComponent,
+    GiftCardNewComponent,
+    GiftCardGeneratedIdDialogComponent
   ],
   imports: [
     BrowserModule,
