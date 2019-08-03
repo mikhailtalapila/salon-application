@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'salon-nav-bar-menu',
@@ -7,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
   }
-  lookUpClient(): void {
-    alert('Look up client');
+  goToClients(): void {
+    this._router.navigate(['gift-cards', 'gift-card-details', '1']);
   }
-  makeAppointment(): void {
-    alert('Make an appointment');
+  newGiftCerticate(): void {
+    this._router.navigate(['gift-cards', 'new-gift-card']);
   }
 }

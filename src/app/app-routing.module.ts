@@ -7,6 +7,10 @@ import { GiftCardDetailsComponent } from './gift-cards/gift-card-details.compone
 import { GiftCardResolverService } from './gift-cards/services/resolvers/gift-card-resolver.service';
 import { GiftCardTransactionsResolverService } from './gift-cards/services/resolvers/gift-card-transactions-resolver.service';
 import { GiftCardNewComponent } from './gift-cards/gift-card-new.component';
+import { CustomerResolverService } from './customers/services/resolvers/customer-resolver.service';
+import { CustomersResolverService } from './customers/services/resolvers/customers-resolver.service';
+import { CustomerListComponent } from './customers/customer-list.component';
+import { CustomerDetailsComponent } from './customers/customer-details.component';
 
 const routes: Routes = [
   { 
@@ -27,6 +31,21 @@ const routes: Routes = [
     path: 'gift-cards/new-gift-card',
     component: GiftCardNewComponent
   },
+  {
+    path: 'customers/customer-list',
+    component: CustomerListComponent,
+    resolve: {
+                customers: CustomersResolverService
+             },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: 'customers/customer-details/:id',
+    component: CustomerDetailsComponent,
+    resolve: {
+                 customer: CustomerResolverService
+             }
+  },
   { path: 'daily-scheduler', component: DailySchedulerComponent},
   { 
     path: '',
@@ -38,6 +57,11 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [GiftCardsResolverService]
+  providers: [
+                GiftCardsResolverService,
+                GiftCardResolverService,
+                CustomerResolverService,
+                CustomersResolverService
+             ]
 })
 export class AppRoutingModule { }

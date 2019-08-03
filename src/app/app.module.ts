@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GiftCardDetailsComponent } from './gift-cards/gift-card-details.component';
 import { GiftCardNewComponent } from './gift-cards/gift-card-new.component';
 import { GiftCardGeneratedIdDialogComponent } from './gift-cards/dialogs/gift-card-generated-id-dialog.component';
+import { CustomerListComponent } from './customers/customer-list.component';
+import { CustomerDetailsComponent } from './customers/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { GiftCardGeneratedIdDialogComponent } from './gift-cards/dialogs/gift-ca
     GiftCardListComponent,
     GiftCardDetailsComponent,
     GiftCardNewComponent,
-    GiftCardGeneratedIdDialogComponent
+    GiftCardGeneratedIdDialogComponent,
+    CustomerListComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,7 @@ import { GiftCardGeneratedIdDialogComponent } from './gift-cards/dialogs/gift-ca
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [SalonAppComponent]
+  bootstrap: [SalonAppComponent],
+  entryComponents: [GiftCardGeneratedIdDialogComponent]
 })
 export class AppModule { }

@@ -66,7 +66,7 @@ export class GiftCardNewComponent implements OnInit, AfterViewInit {
     });
   }
   navigateToGiftCardList(): void {
-    this._router.navigate(['gift-card-list']);
+    this._router.navigate(['gift-cards', 'gift-card-list']);
   }
   saveGiftCard(): void {
     const gc = { ...this.giftCard, ...this.giftCardForm.value };
