@@ -18,6 +18,7 @@ import { GiftCardGeneratedIdDialogComponent } from './gift-cards/dialogs/gift-ca
 import { CustomerListComponent } from './customers/customer-list.component';
 import { CustomerDetailsComponent } from './customers/customer-details.component';
 import { CustomerNewComponent } from './customers/customer-new.component';
+import { CustomerGeneratedDialogComponent } from './customers/dialogs/customer-generated-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CustomerNewComponent } from './customers/customer-new.component';
     GiftCardGeneratedIdDialogComponent,
     CustomerListComponent,
     CustomerDetailsComponent,
-    CustomerNewComponent
+    CustomerNewComponent,
+    CustomerGeneratedDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,6 @@ import { CustomerNewComponent } from './customers/customer-new.component';
   ],
   providers: [],
   bootstrap: [SalonAppComponent],
-  entryComponents: [GiftCardGeneratedIdDialogComponent]
+  entryComponents: [GiftCardGeneratedIdDialogComponent, CustomerGeneratedDialogComponent]
 })
 export class AppModule { }

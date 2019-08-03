@@ -11,4 +11,5 @@ export interface ICustomer {
     primaryPhoneNumber: string;
     secondaryPhoneNumber: string;
     notes: string;
+    isDeleted: boolean;
 }
