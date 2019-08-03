@@ -13,7 +13,7 @@ export class NavBarMenuComponent implements OnInit {
   ngOnInit() {
   }
   goToClients(): void {
-    this._router.navigate(['gift-cards', 'gift-card-details', '1']);
+    this._router.navigate(['customers', 'customer-list']);
   }
   newGiftCerticate(): void {
     this._router.navigate(['gift-cards', 'new-gift-card']);

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SharedSettingsService {
 
-  private _applicationName: String = 'Salon Application';
+  private _applicationName: String = 'Signature Nails';
   get applicationName(): String {
     return this._applicationName;
   }

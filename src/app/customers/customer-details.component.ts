@@ -13,7 +13,12 @@ export class CustomerDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.customer = this._route.snapshot.data['customer'];
-    console.log('Customer details: ', this.customer);
+  }
+  navigateToCustomersList(): void {
+    this._router.navigate(['customers', 'customer-list']);
+  }
+  updateCustomerInformation(): void {
+    this._router.navigate(['customers', 'customer-list']);
   }
 
 }

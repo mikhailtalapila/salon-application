@@ -17,6 +17,7 @@ import { GiftCardNewComponent } from './gift-cards/gift-card-new.component';
 import { GiftCardGeneratedIdDialogComponent } from './gift-cards/dialogs/gift-card-generated-id-dialog.component';
 import { CustomerListComponent } from './customers/customer-list.component';
 import { CustomerDetailsComponent } from './customers/customer-details.component';
+import { CustomerNewComponent } from './customers/customer-new.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CustomerDetailsComponent } from './customers/customer-details.component
     GiftCardNewComponent,
     GiftCardGeneratedIdDialogComponent,
     CustomerListComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    CustomerNewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,35 @@
-<p>
-  customer-details works!
-</p>
+<mat-card (click)='navigateToCustomersList()'>
+  <mat-card-actions>
+    <button mat-button>
+      <mat-icon>keyboard_backspace</mat-icon>    
+    <span>&nbsp; Back to the list</span></button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1 *ngIf="displayError">Error updating customer information. Please contact support</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="First name" [(ngModel)]="customer.firstName">
+    </mat-form-field>
+     <mat-form-field class="full-width">
+      <input matInput placeholder="Last name" [(ngModel)]="customer.lastName">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Primary phone number" [ngModel]="customer.primaryPhoneNumber">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Secondary phone number" [ngModel]="customer.secondaryPhoneNumber">
+      </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Note" [(ngModel)]="customer.notes">
+    </mat-form-field>    
+  </mat-card-content> 
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="updateCustomerInformation()">Update customer's information</button>
+  </mat-card-actions>
+</mat-card>

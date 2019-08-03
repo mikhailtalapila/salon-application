@@ -11,6 +11,7 @@ import { CustomerResolverService } from './customers/services/resolvers/customer
 import { CustomersResolverService } from './customers/services/resolvers/customers-resolver.service';
 import { CustomerListComponent } from './customers/customer-list.component';
 import { CustomerDetailsComponent } from './customers/customer-details.component';
+import { CustomerNewComponent } from './customers/customer-new.component';
 
 const routes: Routes = [
   { 
@@ -45,6 +46,10 @@ const routes: Routes = [
     resolve: {
                  customer: CustomerResolverService
              }
+  },
+  {
+    path: 'customers/new-customer',
+    component: CustomerNewComponent
   },
   { path: 'daily-scheduler', component: DailySchedulerComponent},
   { 
