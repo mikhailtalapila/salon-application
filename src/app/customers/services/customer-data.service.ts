@@ -25,6 +25,14 @@ export class CustomerDataService {
         catchError(this.handleError)
       );
   } 
+  updateCustomer(customer: ICustomer): Observable<ICustomer> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });   
+    return this._http.put<ICustomer>(this._customersURL, customer, { headers: headers})
+      .pipe(
+        tap(data => console.log('updated customer: ' + JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+  }
   private handleError(err) {
     let errorMessage = '';
     if(err.error instanceof Error) {

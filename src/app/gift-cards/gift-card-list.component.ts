@@ -32,4 +32,7 @@ export class GiftCardListComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  addNewGiftCertificate(): void {
+    this._router.navigate(['gift-cards', 'new-gift-card']);
+  }
 }

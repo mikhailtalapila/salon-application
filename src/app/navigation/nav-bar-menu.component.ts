@@ -15,7 +15,7 @@ export class NavBarMenuComponent implements OnInit {
   goToClients(): void {
     this._router.navigate(['customers', 'customer-list']);
   }
-  newGiftCerticate(): void {
-    this._router.navigate(['gift-cards', 'new-gift-card']);
+  goToGiftCertificates(): void {
+    this._router.navigate(['gift-cards', 'gift-card-list']);
   }
 }

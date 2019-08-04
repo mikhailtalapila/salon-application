@@ -1,6 +1,9 @@
 <mat-form-field class="full-width" style="margin-top: 15px;">
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Find...">
 </mat-form-field>
+<button style="margin-bottom: 15px;" mat-raised-button color="warn" (click)="addNewGiftCertificate()">
+  <mat-icon>card_giftcard</mat-icon><span>&nbsp; Add a new gift certificate</span>
+</button>
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="id">
