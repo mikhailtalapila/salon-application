@@ -48,8 +48,8 @@ export class GiftCardNewComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.giftCardForm = this._fb.group({
       amount: ['', [Validators.required, NumberValidators.range(0, 10000)]],
-      from: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]],
-      to: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]],
+      from: ['', [Validators.maxLength(50)]],
+      to: ['', [Validators.maxLength(50)]],
       note: ''
     });
   }

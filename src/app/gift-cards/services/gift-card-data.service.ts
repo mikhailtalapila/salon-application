@@ -4,15 +4,19 @@ import { Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { IGiftCard } from '../models/gift-card';
 import { IGiftCardTransaction } from '../models/gift-card-transaction';
+import { SharedSettingsService } from 'src/app/shared/services/shared-settings.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GiftCardDataService {
-  private _giftCardsURL = 'https://localhost:44380/api/v1/giftcard';
-  private _giftCardTransactionURL='https://localhost:44380/api/v1/giftcardtransaction';
+  private _giftCardsURL: string; 
+  private _giftCardTransactionURL: string;
   
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient, private _settings: SharedSettingsService) { 
+    this._giftCardsURL = this._settings.applicationAPIBaseUrl + 'giftcard';
+    this._giftCardTransactionURL = this._settings.applicationAPIBaseUrl + 'giftcardtransaction';
+  }
   getGiftCards(): Observable<IGiftCard[]> {
     return this._http.get<IGiftCard[]>(this._giftCardsURL).pipe(tap(), catchError(this.handleError));
   }

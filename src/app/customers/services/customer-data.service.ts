@@ -3,14 +3,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { ICustomer } from '../models/customer';
 import { tap, catchError } from 'rxjs/operators';
+import { SharedSettingsService } from 'src/app/shared/services/shared-settings.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerDataService {
-  private _customersURL = 'https://localhost:44380/api/v1/customer';
+  private _customersURL: string;
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient, private _settings: SharedSettingsService) { 
+    this._customersURL = this._settings.applicationAPIBaseUrl + 'customer';
+  }
   getCustomers(): Observable<ICustomer[]> {
     return this._http.get<ICustomer[]>(this._customersURL).pipe(tap(), catchError(this.handleError));
   }
