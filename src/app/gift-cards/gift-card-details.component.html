@@ -8,8 +8,9 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-      <h1 class="bold red"># {{giftCard.id}}</h1>
-      <h1 *ngIf="displayError">Error updating gift card. Please contact support</h1>
+            <h1 class="bold red">Gift certificate # {{giftCard.id}}</h1>
+            <h1 *ngIf="displayError">Error updating gift card. Please contact support</h1>      
+            <h1 class="bold green">Remaining balance: {{giftCard.amount | currency}}</h1> 
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
@@ -18,9 +19,6 @@
     </mat-form-field>
      <mat-form-field class="full-width">
       <input matInput placeholder="TO" disabled [(ngModel)]="giftCard.to">
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <input matInput placeholder="AMOUNT" disabled [ngModel]="giftCard.amount | currency">
     </mat-form-field>
     <mat-form-field class="full-width">
         <input matInput placeholder="DATE SOLD" disabled [ngModel]="giftCard.dateSold | date">
@@ -43,7 +41,7 @@
     <button mat-raised-button color="primary" disabled="{{buttonsAreDisabled}}" (click)="useOtherAmount()">USE OTHER AMOUNT</button>
   </mat-card-actions>
 </mat-card>
-<mat-card>
+<mat-card *ngIf="displayTransactionsTable">
   <mat-card-content>
     <div class="mat-elevation-z8" *ngIf="displayTransactionsTable">
     <table  mat-table [dataSource]='dataSource'>
