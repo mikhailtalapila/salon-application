@@ -19,6 +19,7 @@ import { CustomerListComponent } from './customers/customer-list.component';
 import { CustomerDetailsComponent } from './customers/customer-details.component';
 import { CustomerNewComponent } from './customers/customer-new.component';
 import { CustomerGeneratedDialogComponent } from './customers/dialogs/customer-generated-dialog.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -36,8 +37,7 @@ import { CustomerGeneratedDialogComponent } from './customers/dialogs/customer-g
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,    
-    AppRoutingModule,
+    BrowserAnimationsModule, 
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
@@ -52,7 +52,9 @@ import { CustomerGeneratedDialogComponent } from './customers/dialogs/customer-g
     SchedulerModule,
     HttpClientModule,
     FormsModule,    
-    ReactiveFormsModule
+    ReactiveFormsModule,  
+    AdminModule,     
+    AppRoutingModule // keep this last
   ],
   providers: [],
   bootstrap: [SalonAppComponent],
