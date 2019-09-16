@@ -15,7 +15,7 @@ export class SharedSettingsService {
     return this._applicationName;
   }
   constructor() { 
-    // this._applicationAPIBaseUrl = 'http://localhost:4202/api/v1/';
-    this._applicationAPIBaseUrl = 'https://localhost:44380/api/v1/';
+    this._applicationAPIBaseUrl = 'http://localhost:4202/api/v1/';
+    // this._applicationAPIBaseUrl = 'https://localhost:44380/api/v1/';
   }
 }

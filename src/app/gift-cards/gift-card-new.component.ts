@@ -17,9 +17,11 @@ import { GiftCardGeneratedIdDialogComponent } from './dialogs/gift-card-generate
 })
 export class GiftCardNewComponent implements OnInit, AfterViewInit {
   @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
+  addButtonVerbiage = "Add";
   giftCardForm: FormGroup;
   errorMessage: string;
   giftCard: IGiftCard;
+  addButtonDisabled = false;
   displayMessage: { [key: string]: string } = {};
   private validationMessages: { [key: string]: { [key: string]: string } };
   private genericValidator: GenericValidator;
@@ -71,6 +73,8 @@ export class GiftCardNewComponent implements OnInit, AfterViewInit {
   saveGiftCard(): void {
     const gc = { ...this.giftCard, ...this.giftCardForm.value };
     gc.dateSold = new Date();
+    this.addButtonVerbiage = "Please wait...";
+    this.addButtonDisabled = true;
     this._giftCardDataService.createGiftCard(gc)
       .subscribe(
         value =>  { 
