@@ -17,6 +17,7 @@ export class GiftCardDataService {
     this._giftCardsURL = this._settings.applicationAPIBaseUrl + 'giftcard';
     this._giftCardTransactionURL = this._settings.applicationAPIBaseUrl + 'giftcardtransaction';
   }
+  // gift cards
   getGiftCards(): Observable<IGiftCard[]> {
     return this._http.get<IGiftCard[]>(this._giftCardsURL).pipe(tap(), catchError(this.handleError));
   }
@@ -31,6 +32,7 @@ export class GiftCardDataService {
         catchError(this.handleError)
       );
   } 
+  // gift card transactions
   createTransaction(transaction: IGiftCardTransaction): Observable<IGiftCardTransaction> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });    
     return this._http.post<IGiftCardTransaction>(this._giftCardTransactionURL, transaction, { headers: headers })
@@ -39,9 +41,11 @@ export class GiftCardDataService {
         catchError(this.handleError)
       );
   }
-  getGiftCardTransactions(giftCardId: number): Observable<IGiftCardTransaction[]> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' }); 
+  getGiftCardTransactionsByGiftCardId(giftCardId: number): Observable<IGiftCardTransaction[]> {
     return this._http.get<IGiftCardTransaction[]>(this._giftCardTransactionURL + '/giftcard/' + giftCardId).pipe(tap(), catchError(this.handleError)); 
+  }
+  getGiftCardsAllTransactions(): Observable<IGiftCardTransaction[]> {
+    return this._http.get<IGiftCardTransaction[]>(this._giftCardTransactionURL).pipe(tap(), catchError(this.handleError));
   }
   private handleError(err) {
     let errorMessage = '';

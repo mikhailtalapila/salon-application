@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { IGiftCardTransaction } from '../../models/gift-card-transaction';
+import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GiftCardDataService } from '../gift-card-data.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GiftCardTransactionsResolverService implements Resolve<IGiftCardTransaction[]> {
-
+export class GiftCardTransactionsByGiftCardResolverService implements Resolve<IGiftCardTransaction[]> {
 
   resolve(route: ActivatedRouteSnapshot): Observable<IGiftCardTransaction[]> {
-    return this._giftCardDataService.getGiftCardTransactions(+route.params['id']);
+    return this._giftCardDataService.getGiftCardTransactionsByGiftCardId(+route.params['id']);
   }
 
-  constructor(private _giftCardDataService: GiftCardDataService) {
-   }
+  constructor(private _giftCardDataService: GiftCardDataService) { }
 }
