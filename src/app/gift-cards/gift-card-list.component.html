@@ -4,6 +4,11 @@
 <button style="margin-bottom: 15px;" mat-raised-button color="warn" (click)="addNewGiftCertificate()">
   <mat-icon>card_giftcard</mat-icon><span>&nbsp; Add a new gift certificate</span>
 </button>
+&nbsp;
+&nbsp;
+<button style="margin-bottom: 15px;" mat-raised-button color="success" (click)="viewAllTransactions()">
+  <mat-icon>assignment_turned_in</mat-icon><span>&nbsp; View all transactions</span>
+</button>
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="id">

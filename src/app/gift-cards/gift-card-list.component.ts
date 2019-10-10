@@ -25,6 +25,9 @@ export class GiftCardListComponent implements OnInit {
   viewDetails(giftCard: IGiftCard) {
     this._router.navigate(['gift-cards', 'gift-card-details', giftCard.id]);
   }
+  viewAllTransactions() {
+    this._router.navigate(['gift-cards', 'transactions-list']);
+  }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
